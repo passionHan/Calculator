@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08223F431E9DC66D002EC8C6 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08223F421E9DC66D002EC8C6 /* CalculatorBrain.swift */; };
+		08BEEB641E9F6EDC007B1465 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BEEB631E9F6EDC007B1465 /* UIView+Extension.swift */; };
 		08E6E5CD1E8CE9C4007FFDFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6E5CC1E8CE9C4007FFDFF /* AppDelegate.swift */; };
 		08E6E5CF1E8CE9C4007FFDFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E6E5CE1E8CE9C4007FFDFF /* ViewController.swift */; };
 		08E6E5D21E8CE9C4007FFDFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E6E5D01E8CE9C4007FFDFF /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08223F421E9DC66D002EC8C6 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		08BEEB631E9F6EDC007B1465 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		08E6E5C91E8CE9C4007FFDFF /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E6E5CC1E8CE9C4007FFDFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08E6E5CE1E8CE9C4007FFDFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				08E6E5CC1E8CE9C4007FFDFF /* AppDelegate.swift */,
 				08E6E5CE1E8CE9C4007FFDFF /* ViewController.swift */,
+				08223F421E9DC66D002EC8C6 /* CalculatorBrain.swift */,
+				08BEEB631E9F6EDC007B1465 /* UIView+Extension.swift */,
 				08E6E5D01E8CE9C4007FFDFF /* Main.storyboard */,
 				08E6E5D31E8CE9C4007FFDFF /* Assets.xcassets */,
 				08E6E5D51E8CE9C4007FFDFF /* LaunchScreen.storyboard */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08223F431E9DC66D002EC8C6 /* CalculatorBrain.swift in Sources */,
 				08E6E5CF1E8CE9C4007FFDFF /* ViewController.swift in Sources */,
+				08BEEB641E9F6EDC007B1465 /* UIView+Extension.swift in Sources */,
 				08E6E5CD1E8CE9C4007FFDFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +310,7 @@
 				08E6E5DD1E8CE9C4007FFDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
