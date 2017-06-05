@@ -31,13 +31,13 @@ platform :ios do
 
     git_pull(only_tags: true) 
 
-    commit_version_bump(
-      message: "Version Bump",
-    )
-
     build_number = increment_build_number.to_f
     increment_version_number(
       version_number: (1.0 + build_number / 10).to_s 
+    )
+
+    commit_version_bump(
+      message: "Version Bump",
     )
 
     push_to_git_remote
