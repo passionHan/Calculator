@@ -19,80 +19,30 @@ platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     
+    
   end
 
   desc "Deploy a new version to the App Store"
-  lane :release do |options|
+  lane :release do
 
-    # 替换图标
-    relpaceIcon(options)
 
-    # 拉取远程代码
+    branchName = git_branch
+    UI.message(branchName)
+
     git_pull(only_tags: true) 
 
-    #递增build_number 和 version_number
     build_number = increment_build_number.to_f
     increment_version_number(
       version_number: (1.0 + build_number / 10).to_s 
     )
 
-    # 提交版本更新
     commit_version_bump(
       message: "Version Bump",
     )
-    # 将更改推送到远端
+
     push_to_git_remote
 
-
-    # 配置证书和描述文件
-    configProvision
-
-    # 配置工程文件
-    configProject(options[:appName])
-
-    fileName = "Calculator" + get_version_number + ".ipa"
-
-    gym(
-      clean: true,
-      output_directory: "./build",
-      export_method: "enterprise",
-      output_name: fileName
-    )
-
   end
-
-  def relpaceIcon(options)
-    download_file(url: options[:icon120], destination_path: './Calculator/Assets.xcassets/AppIcon.appiconset/57X57.png')
-    download_file(url: options[:icon180], destination_path: './Calculator/Assets.xcassets/AppIcon.appiconset/120X120.png')
-
-    git_commit(path: ["./Calculator/Assets.xcassets/AppIcon.appiconset/57X57.png", "./Calculator/Assets.xcassets/AppIcon.appiconset/120X120.png"], message: "replace icon")
-
-  end
-
-
-  def configProject(appName)
-    
-    update_project_provisioning(
-      profile: "./cert/InHouseText.mobileprovision", # optional if you use sigh
-    )
-
-    update_info_plist(
-      plist_path: "./Calculator/Info.plist",
-      display_name: appName.to_s
-    )
-  end
-
-  private_lane :configProvision do 
-    cert（
-      output_path： "./cert"
-    ）
-    sigh(
-      force: true,
-      output_path: "./cert",
-      filename: "InHouseText.mobileprovision"
-    )
-  end
-
 
   # You can define as many lanes as you want
 
